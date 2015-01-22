@@ -1,0 +1,58 @@
+{
+  "name": "ampersand-filereader-input-view",
+  "description": "A view module for returning metadata via callback using browser FileReader.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Gabriel Dibble",
+    "email": "gdibble@gmail.com"
+  },
+  "browserify": {
+    "transform": [
+      "ampersand-version"
+    ]
+  },
+  "bugs": {
+    "url": "https://github.com/gdibble/ampersand-filereader-input-view/issues"
+  },
+  "dependencies": {
+    "ampersand-input-view": "^2.0.0"
+  },
+  "devDependencies": {
+    "ampersand-form-view": "^2.0.0",
+    "beefy": "^2.0.2"
+  },
+  "homepage": "https://github.com/gdibble/ampersand-filereader-input-view",
+  "keywords": [
+    "forms",
+    "ampersand",
+    "file",
+    "reader",
+    "filereader"
+  ],
+  "license": "MIT",
+  "main": "ampersand-filereader-input-view.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gdibble/ampersand-filereader-input-view"
+  },
+  "scripts": {
+    "validate": "jshint .",
+    "demo": "beefy demo.js"
+  },
+  "testling": {
+    "files": "test/*.js",
+    "browsers": [
+      "ie/9..latest",
+      "firefox/17..latest",
+      "firefox/nightly",
+      "chrome/22..latest",
+      "chrome/canary",
+      "opera/12..latest",
+      "opera/next",
+      "safari/5.1..latest",
+      "ipad/6.0..latest",
+      "iphone/6.0..latest",
+      "android-browser/4.2..latest"
+    ]
+  }
+}
