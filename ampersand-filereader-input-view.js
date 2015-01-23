@@ -55,12 +55,15 @@ var FileReaderInputView = AmpersandInputView.extend({
           //set temporary Shadow DOM image element src to get width/height
           shadowDomImgElm.src = reader.result;
 
-         self.callback(self, {
+          self.callback(self, {
             width:  shadowDomImgElm.width,
             height: shadowDomImgElm.height,
             type:   file.type,
             src:    reader.result
           });
+
+          //cleanup
+          shadowDomImgElm = undefined;
         };
         reader.readAsDataURL(file); //read image file
       } else {
