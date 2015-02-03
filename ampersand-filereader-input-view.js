@@ -11,11 +11,52 @@
 
 var AmpersandInputView = require('ampersand-input-view');
 
+// Private Helpers:
+
+function newArray() {
+  return [];
+}
+
+
+////////////////////////////////////////////////////////////////////////////////
+
 var FileReaderInputView = AmpersandInputView.extend({
+  props: {
+    label:           [ 'string', true,  'File'          ],
+    name:            [ 'string', true,  'file'          ],
+    placeholder:     [ 'string', true,  'file'          ],
+    type:            [ 'string', true,  'file'          ],
+    validClass:      [ 'string', true,  'input-valid'   ],
+    invalidClass:    [ 'string', true,  'input-invalid' ],
+    tests:           [ 'array',  true,  newArray        ],
+    message:         [ 'string', false, ''              ],
+    template:        [ 'any',    false, ''              ],
+    unselectedText:  'any', // these are any so a function returning a string can be passed
+    value:           'any'  //
+  },
   initialize: function (opts) {
     this.callback = opts.callback || function () {};
 
+    if (typeof opts.template === 'undefined') {
+      this.template = '<label>'+
+                        '<span data-hook="label"></span>'+
+                        '<input class="form-input" placeholder="file" type="file">'+
+                        '<div data-hook="message-container" class="message message-below message-error">'+
+                          '<p data-hook="message-text">This field is required.</p>'+
+                       '</div>'+
+                      '</label>';
+    }
+
+    //
+    // this.requiredMet = this.fieldsValid = true;
+
     AmpersandInputView.prototype.initialize.call(this);
+  },
+  beforeSubmit: function () {
+    this.shouldValidate = true;
+    if (!this.valid) { // && !this.requiredMet) {
+      this.message = this.requiredMessage;
+    }
   },
   reset: function () {
     this.query('input').value = '';
