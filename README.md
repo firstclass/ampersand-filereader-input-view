@@ -78,3 +78,6 @@ Created by [@gdibble](http://twitter.com/gabedibble).
 
 MIT
 
+---
+
+**» [npmjs.com/package/ampersand-filereader-input-view](https://www.npmjs.com/package/ampersand-filereader-input-view)**
