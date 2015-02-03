@@ -1,7 +1,7 @@
 {
   "name": "ampersand-filereader-input-view",
   "description": "A view module for returning metadata via callback using browser FileReader.",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": {
     "name": "Gabriel Dibble",
     "email": "gdibble@gmail.com"
@@ -12,7 +12,7 @@
     ]
   },
   "bugs": {
-    "url": "https://github.com/gdibble/ampersand-filereader-input-view/issues"
+    "url": "https://github.com/firstclass/ampersand-filereader-input-view/issues"
   },
   "dependencies": {
     "ampersand-input-view": "^2.0.0"
@@ -21,7 +21,7 @@
     "ampersand-form-view": "^2.0.0",
     "beefy": "^2.0.2"
   },
-  "homepage": "https://github.com/gdibble/ampersand-filereader-input-view",
+  "homepage": "https://github.com/firstclass/ampersand-filereader-input-view",
   "keywords": [
     "forms",
     "ampersand",
@@ -33,7 +33,7 @@
   "main": "ampersand-filereader-input-view.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/gdibble/ampersand-filereader-input-view"
+    "url": "git://github.com/firstclass/ampersand-filereader-input-view"
   },
   "scripts": {
     "validate": "jshint .",
