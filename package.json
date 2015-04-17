@@ -1,7 +1,7 @@
 {
   "name": "ampersand-filereader-input-view",
   "description": "A view module for returning metadata via callback using browser FileReader.",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": {
     "name": "Gabriel Dibble",
     "email": "gdibble@gmail.com"
