@@ -88,7 +88,7 @@ var FileReaderInputView = AmpersandInputView.extend({
       var reader = new FileReader();
       var file   = changeEvent.target.files[0]; //file input in single mode, read only 1st item in files array
 
-      if (!!file.type.match('image')) {
+      if (file && !!file.type.match('image')) {
         //image: read and return metadata
         reader.onloadend = function () {
           var shadowDomImgElm = document.createElement('img');
