@@ -1,4 +1,4 @@
-/*global FileReader*/
+/*global Image,FileReader*/
 /*$AMPERSAND_VERSION*/
 
 /*!
@@ -89,22 +89,20 @@ var FileReaderInputView = AmpersandInputView.extend({
       var file   = changeEvent.target.files[0]; //file input in single mode, read only 1st item in files array
 
       if (file && !!file.type.match('image')) {
-        //image: read and return metadata
+        // Image: read and return metadata
         reader.onloadend = function () {
-          var shadowDomImgElm = document.createElement('img');
-
-          //set temporary Shadow DOM image element src to get width/height
-          shadowDomImgElm.src = reader.result;
-
-          self.callback(self, {
-            width:  shadowDomImgElm.width,
-            height: shadowDomImgElm.height,
-            type:   file.type,
-            src:    reader.result
-          });
-
-          //cleanup
-          shadowDomImgElm = undefined;
+          var img = new Image();
+          // When image has processed, return metadata
+          img.onload = function () {
+            this.callback(this, {
+              width:  img.width,
+              height: img.height,
+              type:   file.type,
+              src:    reader.result
+            });
+          }.bind(self);
+          // Set to get width/height
+          img.src = reader.result;
         };
         reader.readAsDataURL(file); //read image file
       } else {
